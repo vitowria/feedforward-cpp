@@ -11,8 +11,22 @@ Demonstrar como uma rede neural multicamada pode ser implementada do zero em C++
 ---
 
 ## Estrutura
-
-<pre lang="markdown"> ``` feedforward-cpp/ ├── include/ # Headers da rede │ ├── neuron.h │ ├── layer.h │ ├── ffn.h │ └── xor.h ├── src/ # Implementações das classes │ ├── neuron.cpp │ ├── layer.cpp │ └── ffn.cpp ├── main.cpp # Execução padrão da rede ├── test_runner.cpp # Roda a rede 5 vezes com diferentes seeds ├── makefile # Compilação └── resultados_xor.txt # Resultados da execução (gerado após rodar) ``` </pre>
+```
+feedforward-cpp/
+├── include/            # Headers da rede
+│   ├── neuron.h
+│   ├── layer.h
+│   ├── ffn.h
+│   └── xor.h
+├── src/                # Implementações das classes
+│   ├── neuron.cpp
+│   ├── layer.cpp
+│   └── ffn.cpp
+├── main.cpp            # Execução padrão da rede
+├── test_runner.cpp     # Roda a rede 5 vezes com diferentes seeds
+├── makefile            # Compilação
+└── resultados_xor.txt  # Resultados da execução (gerado após rodar)
+```
 
 
 ---
@@ -29,11 +43,12 @@ A rede é composta por:
 ---
 ## Como compilar
 ```bash
-make all    
+make all    #Seed gerada com srand(time(0))
+make test   #Seeds fixas
 ```
 ## Como executar
 ```bash
-./feedforward_network
+./feedforward_network #
  ```
 
 ## Obs:
