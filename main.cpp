@@ -19,11 +19,10 @@ using namespace std;
 
 
 int main() {
-    freopen("resultados_xor.txt", "w", stdout); 
-    //srand(time(0));
-    //srand(42);
-    vector<int> seeds = {1, 42, 123, 999, 2024};
-
+    //freopen("resultados_xor.txt", "w", stdout); 
+    srand(time(0));
+    
+    
     NeuralNetwork rnxor(2, 2, 1);
 
     // Treinar
@@ -31,25 +30,19 @@ int main() {
     auto output_expected = getExpectedOutput();
     rnxor.train(input, output_expected);
 
-    for (int run = 0; run < seeds.size(); run++) {
-            cout << "======== Iteração " << run + 1 << " (seed " << seeds[run] << ") ========" << endl;
-
-            srand(seeds[run]);
-
-            NeuralNetwork rnxor(2, 2, 1);
-            auto input = getInput();
-            auto output_expected = getExpectedOutput();
-
-            rnxor.train(input, output_expected);
-
-            for (size_t i = 0; i < input.size(); i++) {
-                double result = rnxor.feedforward(input[i])[0];
-                cout << "Entrada: (" << input[i][0] << ", " << input[i][1] << ") ";
-                cout << "→ Saída: " << result << " (esperado: " << output_expected[i] << ")" << endl;
-            }
-
-            cout << endl;
+    // Testar
+    for (size_t i = 0; i < input.size(); i++) {
+        cout << "Entrada: (" << input[i][0] << ", " << input[i][1] << ") ";
+        cout << "→ Saída: " << rnxor.feedforward(input[i])[0] << " (esperado: " << output_expected[i] << ")" << endl;
+/*
+        auto saida = rnxor.feedforward(input[i]);
+        if (saida.empty()) {
+            cout << "Erro: saída vazia para entrada (" << input[i][0] << ", " << input[i][1] << ")" << endl;
+            continue;
         }
-
+        cout << "→ Saída: " << saida[0] << " (esperado: " << output_expected[i] << ")" << endl;
+    }
+       */
+    }
     return 0;
 }
