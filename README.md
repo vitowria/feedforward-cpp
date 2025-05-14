@@ -25,7 +25,7 @@ feedforward-cpp/
 ├── main.cpp            # Execução padrão da rede
 ├── test_runner.cpp     # Roda a rede 5 vezes com diferentes seeds
 ├── makefile            # Compilação
-└── resultados_xor.txt  # Resultados da execução (gerado após rodar)
+└── resultados_xor.txt  # Resultados da execução (gerado após rodar teste)
 ```
 
 
@@ -48,10 +48,13 @@ make test   #Seeds fixas
 ```
 ## Como executar
 ```bash
-./feedforward_network #
+./feedforward_network   #Seeds aleatorias
+./tesr_runner           #Seeds fixas
  ```
 
 ## Obs:
 - O número de épocas e taxa de aprendizado são ajustáveis em ffn.h.
-- Os pesos são inicializados a cada execução com srand(fixed_seed) para resultados reprodutíveis.
+- Os pesos são inicializados aleatoriamente a cada execução (usar srand(fixed_seed) para resultados reprodutíveis).
+
+
 
