@@ -1,11 +1,3 @@
-/* 
-No caso do Feed-Forward temos 5 passos:
-Entrada de Dados, Cálculo dos Pesos, Soma Ponderada, Função de Ativação e Saída.
-*/
-
-//O cálculo de erro é baseado na diferença entre a saída prevista (calculada) e a saída esperada. 
-//Em seguida temos a multiplicação do erro pela derivada da função de ativação.
-
 #include <iostream>
 #include <vector>
 #include <cstdlib>

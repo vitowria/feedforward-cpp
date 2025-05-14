@@ -13,7 +13,6 @@ TEST_OBJS = $(OBJ_DIR)/test_runner.o $(OBJ_DIR)/ffn.o $(OBJ_DIR)/layer.o $(OBJ_D
 
 all: $(OBJ_DIR) $(PROJ_NAME)
 
-# === Compilação do programa principal ===
 $(PROJ_NAME): $(MAIN_OBJS)
 	$(CXX) -o $@ $^
 
@@ -40,7 +39,6 @@ $(OBJ_DIR)/neuron.o: $(SRC_DIR)/neuron.cpp $(INC_DIR)/neuron.h
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
-# === Limpeza ===
 clean:
 	@$(RM) $(OBJ_DIR) $(PROJ_NAME) $(TEST_NAME) resultados_xor.txt *~
 
