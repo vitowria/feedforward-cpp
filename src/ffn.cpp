@@ -1,6 +1,6 @@
+/*Mudular o treinamento*/
+
 #include "ffn.h"
-//#include "neuron.h"
-//#include "xor.h"
 #include <iostream>
 #include <vector>
 
